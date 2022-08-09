@@ -42,7 +42,7 @@ export default class Character implements Fighter {
   static generateNumber(): number { return Math.floor(Math.random() * 10 + 1); }
 
   private takeDamage(attackPoints: number): void {
-    if (attackPoints > this._defense) {
+    if (attackPoints >= this._defense) {
       this._lifePoints = this.lifePoints - attackPoints;
     }
   }
