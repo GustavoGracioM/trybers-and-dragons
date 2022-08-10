@@ -22,7 +22,7 @@ export default class PVE extends Battle {
     }
   }
 
-  private annoyingEnemies(): boolean {
+  private remainingEnemies(): boolean {
     if (this.enemies[this.enemies.length - 1].lifePoints === -1) return true;
     return false;
   }
@@ -32,7 +32,7 @@ export default class PVE extends Battle {
       this.player.lifePoints >= 1
       && this.round <= this.enemies.length - 1
     ) {
-      if (this.annoyingEnemies()) break;
+      if (this.remainingEnemies()) break;
       this.pveRound();
     }
     return super.fight();
